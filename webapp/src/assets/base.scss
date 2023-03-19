@@ -1,0 +1,33 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --color-primary: #2a654a;
+  --color-secondary: #333566;
+  --color-accent: #926d3d;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-bg-dark: linear-gradient(330deg, rgba(14, 14, 14, 1) 0%, rgba(29, 29, 29, 1) 100%);
+  --color-txt-on-dark: #fff;
+
+  --surface-bg-primary: var(--color-bg-dark);
+  --surface-txt-on-primary: var(--color-txt-on-dark);
+
+  --color-background: var(--color-bg-dark);
+  --color-text: var(--color-txt-on-dark);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+}
