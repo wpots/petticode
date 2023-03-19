@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "https://blog.pettico.de/*"
+  to = "https://www.pettico.de/blog/:splat"
+  status = 200
