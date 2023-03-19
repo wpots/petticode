@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const video = ref<HTMLInputElement | null>(null)
+const video = ref<HTMLVideoElement | null>(null)
 onMounted(() => {
   if (video.value) {
     video.value.play()
@@ -16,6 +16,7 @@ onMounted(() => {
     </video>
   </main>
 </template>
+
 <style lang="scss">
 video {
   width: 100vw;
