@@ -3,6 +3,7 @@
   --color-primary: #2a654a;
   --color-secondary: #333566;
   --color-accent: #926d3d;
+  --color-accent-300: color-mix(in srgb, var(--color-accent) 60%, white);
 }
 
 /* semantic color variables for this project */

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import AppSlider from '../components/AppSlider.vue'
+import HotCorner from '../components/HotCorner.vue'
 
 const video = ref<HTMLVideoElement | null>(null)
 onMounted(() => {
@@ -14,6 +16,8 @@ onMounted(() => {
     <video ref="video" poster="@/assets/petticodestill-3.png" muted>
       <source src="@/assets/petticode-teaser.webm#t=0,1.4" type="video/webm" />
     </video>
+    <AppSlider />
+    <HotCorner />
   </main>
 </template>
 
