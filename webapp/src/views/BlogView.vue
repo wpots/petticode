@@ -8,8 +8,8 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-const input = ref(null)
-let server = ref(null)
+const input = ref<string | null>(null)
+const server = ref<BluetoothRemoteGATTServer | null>(null)
 const name = 'UP MOVE'
 const uid = 'P4QcAOfEd2jEbIhJa7IstA=='
 const MOVE_ID = '6658-4390-b53c-1de5e1453654'
@@ -60,10 +60,16 @@ const handleButtonClick = async () => {
   ]
   server.value = await navigator.bluetooth
     .requestDevice({ filters: [{ name }], optionalServices })
-    .then((device) => device.gatt.connect())
+    .then(async (device) => {
+      if (!device.gatt) {
+        throw new Error("GATT not available");
+      }
+      return device.gatt.connect();
+    })
 }
-const handleCharacteristicValueChanged = (event) => {
-  const value = event.target.value
+const handleCharacteristicValueChanged = (event: Event) => {
+  const target = event.target as BluetoothRemoteGATTCharacteristic
+  const value = target.value
   console.log('Received ' + value)
 }
 
